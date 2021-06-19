@@ -28,7 +28,7 @@ import {
     SiNginx
 } from 'react-icons/si';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
     paper: {
         padding: '6px 16px',
         width: '350px',
@@ -53,10 +53,10 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     secondaryTail: {
-        backgroundColor: '#01bf71',
+        backgroundColor: props => props.color//'#01bf71',
     },
     icon: {
-        color: '#01bf71'
+        color: props => props.color//'#01bf71'
     },
     heading: {
         fontWeight: 'bold',
@@ -85,11 +85,10 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '0.6rem'
         }
     }
-}));
+});
 
-export default function ExperienceTimeline() {
-    const classes = useStyles();
-
+export default function ExperienceTimeline(props) {
+    const classes = useStyles(props);
     return (
         <Timeline align="alternate" >
             <TimelineItem>
@@ -102,7 +101,7 @@ export default function ExperienceTimeline() {
                     <TimelineDot variant="outlined" className={classes.icon}>
                         <LaptopMacIcon />
                     </TimelineDot>
-                    <TimelineConnector className={classes.secondaryTail} />
+                    <TimelineConnector className={classes.secondaryTail}/>
                 </TimelineSeparator>
                 <TimelineContent>
                     <Paper elevation={3} className={classes.paper}>
@@ -111,7 +110,7 @@ export default function ExperienceTimeline() {
                         </Typography>
                         <Typography className={classes.description}>CCS is a Cloud-based Call centre Service that is a product we are developing. Services include Queue call handling, VRQ, Conditional Routes, Extension call Recording
                             feature, Report generation, Scheduled reports, Live dashboard for Agents and Queues events etc.</Typography>
-                        <ExpIcons>
+                        <ExpIcons themecolor={props.color}>
                             <ExpIconLink aria-label="Erlang"> <FaErlang />  </ExpIconLink>
                             <ExpIconLink aria-label="React"> <FaReact /> </ExpIconLink>
                             <ExpIconLink aria-label="FaGitSquare"> <FaGitSquare /> </ExpIconLink>
@@ -142,7 +141,7 @@ export default function ExperienceTimeline() {
                         <Typography className={classes.description}>Mayship is a project management system that helps to track the progress of current projects, and the status of each employees working on a particular project in
                             a repair contract corporation. It helps to track whether the project is on time or not. This project also includes supervisor approval, complete project time
                             structure, scheduled report delivery etc. Reports are also generated for each project. Mayship has web and ios interface.</Typography>
-                        <ExpIcons>
+                        <ExpIcons themecolor={props.color}>
                             <ExpIconLink aria-label="Erlang"> <FaErlang />  </ExpIconLink>
                             <ExpIconLink aria-label="FaGitSquare"> <FaGitSquare /> </ExpIconLink>
                             <ExpIconLink aria-label="SiNginx"> <SiNginx /> </ExpIconLink>
@@ -169,7 +168,7 @@ export default function ExperienceTimeline() {
                         </Typography>
                         <Typography className={classes.description}>Voifinity is a cloud-based business phone and contact centre solution for workforce collaboration, customer service and extending business operations across
                             multiple locations.</Typography>
-                        <ExpIcons>
+                        <ExpIcons themecolor={props.color}>
                             <ExpIconLink aria-label="Erlang"> <FaErlang />  </ExpIconLink>
                             <ExpIconLink aria-label="FaGitSquare"> <FaGitSquare /> </ExpIconLink>
                             <ExpIconLink aria-label="MdDialerSip"> <MdDialerSip /> </ExpIconLink>

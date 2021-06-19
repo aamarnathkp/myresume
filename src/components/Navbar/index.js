@@ -3,6 +3,8 @@ import { FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { animateScroll as scroll } from 'react-scroll';
 import Logo from '../../images/myframes_white.png';
+import { AiOutlineFormatPainter } from 'react-icons/ai';
+import { RiPaintBrushFill } from 'react-icons/ri';
 
 import {
     Nav,
@@ -11,14 +13,19 @@ import {
     NavMenu,
     NavItem,
     NavLinks,
-    NavLogoImg
-    // NavBtn,
-    // NavBtnLink
+    NavLogoImg,
+    ThemeSelection,
+    Theme
 } from './NavbarElements';
 
-const Navbar = ({ toggle }) => {
+const Navbar = ({ toggle, onThemeClick, currentTheme }) => {
 
     const [scrollNav, setScrollNav] = useState(false);
+    const [onTheme, setOnTheme] = useState(false);
+
+    const onThemeChange = (value) => {
+        setOnTheme(value);
+    }
 
     const changeNav = () => {
         if (window.scrollY >= 80) {
@@ -43,34 +50,39 @@ const Navbar = ({ toggle }) => {
                     <NavbarContainer>
                         <NavLogo to='/' onClick={toggleHome}>
                             {/* MyFrames */}
-                            <NavLogoImg src={Logo}/>
+                            <NavLogoImg src={Logo} />
                         </NavLogo>
                         <MobileIcon onClick={toggle}>
                             <FaBars />
                         </MobileIcon>
                         <NavMenu>
                             <NavItem>
-                                <NavLinks to="about" smooth={true} duration={500} spy={true} exact='true' offset={-80}>About</NavLinks>
+                                <NavLinks themecolor={currentTheme} to="about" smooth={true} duration={500} spy={true} exact='true' offset={-80}>About</NavLinks>
                             </NavItem>
                             {/* <NavItem>
                                 <NavLinks to="discover" smooth={true} duration={500} spy={true} exact='true' offset={-80}>Discover</NavLinks>
                             </NavItem> */}
                             <NavItem>
-                                <NavLinks to="experience" smooth={true} duration={500} spy={true} exact='true' offset={-80}>Work Experience</NavLinks>
+                                <NavLinks themecolor={currentTheme} to="experience" smooth={true} duration={500} spy={true} exact='true' offset={-80}>Work Experience</NavLinks>
                             </NavItem>
                             <NavItem>
-                                <NavLinks to="skills" smooth={true} duration={500} spy={true} exact='true' offset={-80}>Skills</NavLinks>
+                                <NavLinks themecolor={currentTheme} to="skills" smooth={true} duration={500} spy={true} exact='true' offset={-80}>Skills</NavLinks>
                             </NavItem>
                             <NavItem>
-                                <NavLinks to="hobbies" smooth={true} duration={500} spy={true} exact='true' offset={-80}>Hobbies</NavLinks>
+                                <NavLinks themecolor={currentTheme} to="hobbies" smooth={true} duration={500} spy={true} exact='true' offset={-80}>Hobbies</NavLinks>
                             </NavItem>
                             <NavItem>
-                                <NavLinks to="contact" smooth={true} duration={500} spy={true} exact='true' offset={-80}>Contact</NavLinks>
+                                <NavLinks themecolor={currentTheme} to="contact" smooth={true} duration={500} spy={true} exact='true' offset={-80}>Contact</NavLinks>
                             </NavItem>
                         </NavMenu>
-                        {/* <NavBtn>
-                            <NavBtnLink to='/signin'>Sign In</NavBtnLink>
-                        </NavBtn> */}
+                        <ThemeSelection >
+                            <Theme
+                                themecolor={currentTheme}
+                                onClick={onThemeClick}
+                                onMouseEnter={() => { onThemeChange(true) }}
+                                onMouseLeave={() => { onThemeChange(false) }} >
+                                {onTheme ? <RiPaintBrushFill color='black' /> : <AiOutlineFormatPainter color='black' />}</Theme>
+                        </ThemeSelection>
                     </NavbarContainer>
                 </Nav>
             </IconContext.Provider>

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {MdKeyboardArrowRight, MdArrowForward} from 'react-icons/md';
+import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md';
 
 
 export const HeroContainer = styled.div`
@@ -35,7 +35,6 @@ export const HeroBg = styled.div`
     width: 100%;
     height: 100%;
     overflow: hidden;
-
 `
 
 export const VideoBg = styled.video`
@@ -72,8 +71,10 @@ export const HeroH1 = styled.h1`
     }
 
     &:hover {
-        transform: scale(2.02);  
-             
+        @media screen and (max-width: 480px) {
+            transform: scale(1.30);
+        };
+        transform: scale(2.02);          
     }
 `
 

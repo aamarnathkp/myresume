@@ -64,7 +64,7 @@ export const TextWrapper = styled.div`
 `
 
 export const TopLine = styled.p`
-    color: #01bf71;
+    color: ${({themecolor}) =>  (themecolor ? themecolor : '#01BF71') };//#01bf71;
     font-size: ${({ skills }) => (skills ? '32px' : '16px')};//16px;
     line-height: 16px;
     font-weight: 700;
@@ -115,7 +115,7 @@ export const Img = styled.img`
 
 export const Button = styled.a`
     border-radius: 50px;
-    background: ${({ primary }) => (primary ? '#01BF71' : '#010606')};
+    background: ${({ primary, themecolor }) => (primary ? (themecolor ? themecolor : '#010606'): '#010606')};
     white-space: nowrap;
     padding: ${({ big }) => (big ? '14px 48px' : '12px 30px')};
     color:  ${({ dark }) => (dark ? '#010606' : '#fff')};
@@ -130,7 +130,7 @@ export const Button = styled.a`
 
     &:hover{
         transition: all 0.2s ease-in-out;
-        background: ${({ primary }) => (primary ? '#fff' : '#01BF71')};
+        background: ${({ primary, themecolor }) => (primary ? '#fff' : (themecolor ? themecolor : '#01BF71'))};
     }
 `
 
@@ -143,7 +143,7 @@ export const ExpIcons = styled.div`
     justify-content:center ;
     align-items: center;
     width: 240px;
-    color: #01BF71;
+    color: ${({themecolor}) =>  (themecolor ? themecolor : '#01BF71') }; //#01BF71;
 
     @media (max-width: 780px) {
         display: ${({skills}) => (skills ? 'show' : 'none')};//none;
@@ -197,13 +197,13 @@ export const SkillsHeading = styled.h3`
 `
 
 export const Skills = styled.div`
-    color: ''#01BF71''
+    color: ${({themecolor}) =>  (themecolor ? themecolor : '#01BF71') };//#01bf71;
 
 `
 
 export const HeadingH1 = styled.h1`
     font-size: 2.5rem;
-    color: '#01BF71';
+    color: ${({themecolor}) =>  (themecolor ? themecolor : '#01BF71') };//#01bf71;
     text-align: center;
     @media screen and (max-width: 480px) {
         font-size: 2rem;

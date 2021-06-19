@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {Link as LinkS} from 'react-scroll';
-import {Link as LinkR} from 'react-router-dom';
+// import {Link as LinkR} from 'react-router-dom';
 import {FaTimes} from 'react-icons/fa';
 
 export const SidebarContainer = styled.aside`
@@ -69,15 +69,16 @@ export const SidebarLink = styled(LinkS)`
 
 export const SideBtnWtap = styled.div`
     display: flex;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    align-items: center;
     justify-content: center;
 `
 
-export const SidebarRoute = styled(LinkR)`
-    border-radius: 50px;
-    background: #01bf71;
+export const SidebarRoute = styled.button`
+    border-radius: 24px;
+    background: ${({themecolor}) =>  (themecolor ? themecolor : '#01BF71') };//#01bf71;
     white-space: nowrap;
-    padding: 16px 64px;
+    padding: 18px;
     color: #010606;
     font-size: 16px;
     outline: none;

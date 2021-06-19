@@ -25,13 +25,13 @@ import {
     Skills
 } from './InfoElements';
 
-const SkillsSection = () => {
+const SkillsSection = ({currentTheme}) => {
     return (
         <>
         <SkillsStack>
-            <Skills>
-                <SkillsHeading>Key Skills</SkillsHeading>
-                <ExpIcons skills>
+            <Skills themecolor={currentTheme}>
+                <SkillsHeading themecolor={currentTheme}>Key Skills</SkillsHeading>
+                <ExpIcons skills themecolor={currentTheme}>
                     <ExpIconLink aria-label="Erlang" skills> <FaErlang /> </ExpIconLink>
                     <ExpIconLink aria-label="React" skills> <FaReact /> </ExpIconLink>
                     <ExpIconLink aria-label="SiJavascript" skills> <SiJavascript /> </ExpIconLink>
@@ -42,7 +42,7 @@ const SkillsSection = () => {
             </Skills>
             <Skills>
                 <SkillsHeading>Database</SkillsHeading>
-                <ExpIcons skills>
+                <ExpIcons skills themecolor={currentTheme}>
                     <ExpIconLink aria-label="Erlang" skills> Mnesia </ExpIconLink>
                     <ExpIconLink aria-label="React" skills> CouchDB </ExpIconLink>
                     <ExpIconLink aria-label="SiMysql" skills> <SiMysql /> </ExpIconLink>
@@ -50,7 +50,7 @@ const SkillsSection = () => {
             </Skills>
             <Skills>
                 <SkillsHeading>Others</SkillsHeading>
-                <ExpIcons skills>
+                <ExpIcons skills themecolor={currentTheme}>
                     <ExpIconLink aria-label="FaGitSquare"> <FaGitSquare /> </ExpIconLink>
                     <ExpIconLink aria-label="FaJenkins"> <FaJenkins /> </ExpIconLink>
                     <ExpIconLink aria-label="SiNginx"> <SiNginx /> </ExpIconLink>

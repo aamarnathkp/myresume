@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { AiOutlineFormatPainter } from 'react-icons/ai';
+import { RiPaintBrushFill } from 'react-icons/ri';
 
 import {
     SidebarContainer,
@@ -7,13 +9,21 @@ import {
     SidebarWrapper,
     SidebarMenu,
     SidebarLink,
-    // SideBtnWtap,
-    // SidebarRoute
+    SideBtnWtap,
+    SidebarRoute
 } from './SidebarElements';
 
-const Sidebar = ({isOpen, toggle}) => {
+const Sidebar = ({ isOpen, toggle, onThemeClick, currentTheme }) => {
+
+    const [onTheme, setOnTheme] = useState(false);
+
+    const onThemeChange = (value) => {
+        setOnTheme(value);
+    }
+
+
     return (
-        <SidebarContainer isOpen= {isOpen} onClick={toggle}>
+        <SidebarContainer isOpen={isOpen} onClick={toggle}>
             <Icon onClick={toggle}>
                 <CloseIcon />
             </Icon>
@@ -26,9 +36,14 @@ const Sidebar = ({isOpen, toggle}) => {
                     <SidebarLink to='hobbies' onClick={toggle}>Hobbies</SidebarLink>
                     <SidebarLink to='contact' onClick={toggle}>Contact</SidebarLink>
                 </SidebarMenu>
-                {/* <SideBtnWtap>
-                    <SidebarRoute to='/signin'>Sign In</SidebarRoute>
-                </SideBtnWtap> */}
+                <SideBtnWtap>
+                    <SidebarRoute
+                        themecolor={currentTheme}
+                        onClick={onThemeClick}
+                        onMouseEnter={() => { onThemeChange(true) }}
+                        onMouseLeave={() => { onThemeChange(false) }}>
+                        {onTheme ? <RiPaintBrushFill color='black' /> : <AiOutlineFormatPainter color='black' />}</SidebarRoute>
+                </SideBtnWtap>
             </SidebarWrapper>
         </SidebarContainer>
 

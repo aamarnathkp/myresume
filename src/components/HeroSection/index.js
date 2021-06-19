@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import Video from '../../videos/video.mp4';
+//import Video from '../../videos/video.mp4';
 import { Button } from '../ButtonElement';
+import VideoBackground from './VideoBackground';
+
 import {
     FaFacebook,
     FaInstagram,
@@ -11,8 +13,6 @@ import {
 
 import {
     HeroContainer,
-    HeroBg,
-    VideoBg,
     HeroContent,
     HeroH1,
     HeroP,
@@ -23,7 +23,7 @@ import {
     ArrowRight
 } from './HeroElements';
 
-const HeroSection = () => {
+const HeroSection = ({currentTheme}) => {
 
     const [hover, setHover] = useState(false);
 
@@ -33,9 +33,7 @@ const HeroSection = () => {
 
     return (
         <HeroContainer id={'home'}>
-            <HeroBg>
-                <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
-            </HeroBg>
+            <VideoBackground themecolor={currentTheme}/>
             <HeroContent>
                 <HeroH1>Amarnath.K.P</HeroH1>
                 <HeroP>
@@ -60,6 +58,7 @@ const HeroSection = () => {
                 </SocialIcons>
                 <HeroBtnWrapper>
                     <Button to='about'
+                        themecolor={currentTheme}
                         primary="true"
                         dark="true"
                         onMouseEnter={onHover}

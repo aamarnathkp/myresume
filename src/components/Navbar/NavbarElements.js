@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import {Link as LinkR} from 'react-router-dom'
 import {Link as LinkS} from 'react-scroll'
 
+
 export const Nav = styled.nav`
     background: ${({ scrollNav }) => (scrollNav ? '#000' : 'transparent')};
     height: 80px;
@@ -91,13 +92,14 @@ export const NavLinks = styled(LinkS)`
     cursor: pointer;
 
     &.active {
-        border-bottom: 3px solid #01bf71;
+        border-bottom: ${({themecolor}) =>  (themecolor ? `3px solid ${themecolor}` : '#3px solid #01bf71') };//#01bf71;
     }
 `
 
-export const NavBtn = styled.nav`
+export const ThemeSelection = styled.div`
     display: flex;
     align-items: center;
+    justify-content: center;
 
 
     @media screen and (max-width: 768px) {
@@ -105,13 +107,14 @@ export const NavBtn = styled.nav`
     }
 `;
 
-export const NavBtnLink = styled(LinkR)`
-    border-radius: 50px;
-    background: #01bf71;
+export const Theme = styled.button`
+    border-radius: 24px;
+    background: ${({themecolor}) =>  (themecolor ? themecolor : '#01BF71') };//#01bf71;
     white-space: nowrap;
     padding: 10px 22px;
     color: #010606;
     font-size: 16px;
+    width: 60px;
     outline: none;
     border: none;
     cursor: pointer;
@@ -120,8 +123,8 @@ export const NavBtnLink = styled(LinkR)`
 
     &:hover {
         transition: all 0.2s ease-in-out;
+        transform: scale(1.08);
         background: #fff;
-        color: #010606;
+        color: #01bf71;
     }
 `
-

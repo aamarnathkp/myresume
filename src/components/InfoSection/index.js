@@ -3,6 +3,7 @@ import React from 'react'
 import Resume from '../../Resume/AmarnathKP.pdf';
 import Timeline from './ExperienceTimeline';
 import SkillsSection from './Skills';
+import { imageSelector } from '../imageSelection';
 
 // import { Button } from '../ButtonElement';
 
@@ -26,22 +27,23 @@ import {
 
 
 const InfoSection = ({ lightBg, id, imgStart, topLine, lightText, headLine, timeline, skills,
-    darkText, description, buttonLabel, img, alt, primary, dark, dark2, showButton }) => {
+    darkText, description, buttonLabel, img, alt, primary, dark, dark2, showButton, currentTheme }) => {
 
     let columns1 = null;
     if (timeline) {
-        columns1 = <Timeline />
+        columns1 = <Timeline color={currentTheme} />
     } else if (skills) {
-        columns1 = <SkillsSection />
+        columns1 = <SkillsSection currentTheme={currentTheme} />
     }
     else {
         columns1 = <TextWrapper>
-            <TopLine>{topLine}</TopLine>
+            <TopLine themecolor={currentTheme} >{topLine}</TopLine>
             <Heading lightText={lightText}>{headLine}</Heading>
             <Subtitle darkText={darkText}>{description}</Subtitle>
             <BtnWrap>
                 {showButton ? <Button to='home'
                     href={Resume}
+                    themecolor={currentTheme}
                     download
                     smooth={true}
                     duration={500}
@@ -68,7 +70,7 @@ const InfoSection = ({ lightBg, id, imgStart, topLine, lightText, headLine, time
                         {timeline ? null :
                             <Column2>
                                 <ImgWrap>
-                                    <Img src={img} alt={alt} />
+                                    <Img src={imageSelector(currentTheme, id)} alt={alt} />
                                 </ImgWrap>
                             </Column2>}
                     </InfoRow>
