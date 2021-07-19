@@ -11,7 +11,7 @@ export const homeObjOne = {
     lightTextDesc: false,
     topLine : 'About Me',
     headLine: 'Self-motivated developer with 4+ years of experience in software development',
-    description :`that includes 3+ years of professional involvement in
+    description :`that includes professional involvement in
     React JS on identifying web-based user interactions along with designing and implementing highly responsive user interface
     components by deploying React concepts. Proficient in translating designs into high-quality code through JS and React workflows.
     And as full time backend Erlang developer`,
@@ -32,7 +32,7 @@ export const homeObjTwo = {
     lightTextDesc: false,
     topLine : 'Discover',
     headLine: 'Self-motivated developer with 4+ years of experience in software development',
-    description :`that includes 3+ years of professional involvement in
+    description :`that includes of professional involvement in
     React JS on identifying web-based user interactions along with designing and implementing highly responsive user interface
     components by deploying React concepts. Proficient in translating designs into high-quality code through JS and React workflows.`,
     buttonLabel: 'Download Resume',
@@ -66,7 +66,7 @@ export const homeObjFour = {
     lightTextDesc: false,
     topLine : 'Skills',
     headLine: 'Self-motivated developer with 4+ years of experience in software development',
-    description :`that includes 3+ years of professional involvement in
+    description :`that includes of professional involvement in
     React JS on identifying web-based user interactions along with designing and implementing highly responsive user interface
     components by deploying React concepts. Proficient in translating designs into high-quality code through JS and React workflows.`,
     buttonLabel: 'Download Resume',
