@@ -22,7 +22,8 @@ export const homeObjOne = {
     alt: 'AboutME',
     dark: false,
     primary: false,
-    darkText: true
+    darkText: true,
+    type : 'about'
 };
 
 export const homeObjTwo = {
@@ -41,7 +42,8 @@ export const homeObjTwo = {
     alt: 'Discover',
     dark: false,
     primary: false,
-    darkText: true
+    darkText: true,
+    type: 'discover'
 }
 
 export const homeObjThree = {
@@ -56,7 +58,8 @@ export const homeObjThree = {
     timeline:true,
     dark: true,
     primary: true,
-    darkText: false
+    darkText: false,
+    type : 'experience'
 };
 
 export const homeObjFour = {
@@ -76,7 +79,8 @@ export const homeObjFour = {
     alt: 'Skills',
     dark: false,
     primary: false,
-    darkText: true
+    darkText: true,
+    type : 'skills'
 };
 
 export const homeObjFive = {
@@ -94,5 +98,6 @@ export const homeObjFive = {
     alt: 'Contact',
     dark: false,
     primary: false,
-    darkText: true
+    darkText: true,
+    type: 'contact'
 };

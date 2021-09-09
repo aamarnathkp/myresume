@@ -13,13 +13,17 @@ export const InfoContainer = styled.div`
 export const InfoWrapper = styled.div`
     display: grid;
     z-index: 1;
-    height: 976px;
+    height: ${({type}) => (type === 'experience' ? '100%' : '100vh')};
     width: 100%;
     max-width: 1100px;
     margin-right: auto;
     margin-left: auto;
     padding: 0 24px;
     justify-content: center;
+
+    @media screen and (max-width: 768px) {
+        height: auto
+    }
 
 `
 

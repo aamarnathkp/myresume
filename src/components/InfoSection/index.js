@@ -27,7 +27,7 @@ import {
 
 
 const InfoSection = ({ lightBg, id, imgStart, topLine, lightText, headLine, timeline, skills,
-    darkText, description, buttonLabel, img, alt, primary, dark, dark2, showButton, currentTheme }) => {
+    darkText, description, buttonLabel, img, alt, primary, dark, dark2, showButton, currentTheme, type }) => {
 
     let columns1 = null;
     if (timeline) {
@@ -62,7 +62,7 @@ const InfoSection = ({ lightBg, id, imgStart, topLine, lightText, headLine, time
     return (
         <>
             <InfoContainer lightBg={lightBg} id={id}>
-                <InfoWrapper>
+                <InfoWrapper type={type}>
                     <InfoRow imgStart={imgStart}>
                         <Column1>
                             {columns1}
