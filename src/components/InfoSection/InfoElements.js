@@ -1,19 +1,18 @@
 import styled from "styled-components";
 
-
 export const InfoContainer = styled.div`
-    color:#fff;
-    background: ${({ lightBg }) => (lightBg ? '#f9f9f9' : '#010606')};
+    color: #fff;
+    background: ${({ lightBg }) => (lightBg ? "#f9f9f9" : "#010606")};
 
     @media screen and (max-width: 768px) {
         padding: 100px 0;
     }
-`
+`;
 
 export const InfoWrapper = styled.div`
     display: grid;
     z-index: 1;
-    height: ${({type}) => (type === 'experience' ? '100%' : '100vh')};
+    height: ${({ type }) => (type === "experience" ? "100%" : "100vh")};
     width: 100%;
     max-width: 1100px;
     margin-right: auto;
@@ -22,108 +21,105 @@ export const InfoWrapper = styled.div`
     justify-content: center;
 
     @media screen and (max-width: 768px) {
-        height: auto
+        height: auto;
     }
-
-`
+`;
 
 export const InfoRow = styled.div`
     display: grid;
     grid-template-columns: minmax(auto, 1fr);
     align-items: center;
-    grid-template-areas: ${({ imgStart }) => (imgStart ? `'col2 col1'` : `'col1 col2'`)};
+    grid-template-areas: ${({ imgStart }) =>
+        imgStart ? `'col2 col1'` : `'col1 col2'`};
 
     @media screen and (max-width: 768px) {
-        grid-template-areas: ${({ imgStart }) => (imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`)};
+        grid-template-areas: ${({ imgStart }) =>
+            imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
     }
-`
+`;
 
 export const Column1 = styled.div`
     margin-bottom: 15px;
     padding: 0 15px;
     grid-area: col1;
 
-    &:hover{
-    transform: scale(1.02);
-    transition: all 0.2s ease-in-out;
+    &:hover {
+        transform: scale(1.02);
+        transition: all 0.2s ease-in-out;
     }
-
-`
+`;
 
 export const Column2 = styled.div`
     margin-bottom: 15px;
     padding: 0 15px;
     grid-area: col2;
 
-    &:hover{
-    transform: scale(1.02);
-    transition: all 0.2s ease-in-out;
+    &:hover {
+        transform: scale(1.02);
+        transition: all 0.2s ease-in-out;
     }
-`
+`;
 
 export const TextWrapper = styled.div`
     max-width: 540px;
     padding-top: 0;
     padding-bottom: 60px;
-`
+`;
 
 export const TopLine = styled.p`
-    color: ${({themecolor}) =>  (themecolor ? themecolor : '#01BF71') };//#01bf71;
-    font-size: ${({ skills }) => (skills ? '32px' : '16px')};//16px;
+    color: ${({ themecolor }) =>
+        themecolor ? themecolor : "#01BF71"}; //#01bf71;
+    font-size: ${({ skills }) => (skills ? "32px" : "16px")}; //16px;
     line-height: 16px;
     font-weight: 700;
     letter-spacing: 1.4px;
     text-transform: uppercase;
     margin-bottom: 16px;
-`
-
+`;
 
 export const Heading = styled.h1`
     margin-bottom: 24px;
     font-size: 48px;
     line-height: 1.1;
     font-weight: 600;
-    color: ${({ lightText }) => (lightText ? '#f7f8fa' : '#010606')};
-
+    color: ${({ lightText }) => (lightText ? "#f7f8fa" : "#010606")};
 
     @media screen and (max-width: 480px) {
-        font-size: 32px
+        font-size: 32px;
     }
-`
+`;
 export const Subtitle = styled.p`
     max-width: 440px;
     margin-bottom: 35px;
     font-size: 18px;
     line-height: 24px;
-    color: ${({ darkText }) => (darkText ? '#010606' : '#fff')}
-
-`
+    color: ${({ darkText }) => (darkText ? "#010606" : "#fff")};
+`;
 
 export const BtnWrap = styled.div`
     display: flex;
     justify-content: flex-start;
-
-`
+`;
 
 export const ImgWrap = styled.div`
-    max-width:555px;
+    max-width: 555px;
     height: 100%;
-`
+`;
 
 export const Img = styled.img`
     width: 100%;
     margin: 0 0 10px 0;
     padding-right: 0;
-`
-
+`;
 
 export const Button = styled.a`
     border-radius: 50px;
-    background: ${({ primary, themecolor }) => (primary ? (themecolor ? themecolor : '#010606'): '#010606')};
+    background: ${({ primary, themecolor }) =>
+        primary ? (themecolor ? themecolor : "#010606") : "#010606"};
     white-space: nowrap;
-    padding: ${({ big }) => (big ? '14px 48px' : '12px 30px')};
-    color:  ${({ dark }) => (dark ? '#010606' : '#fff')};
-    font-size: ${({ fontBig }) => (fontBig ? '20px' : '16px')};
+    padding: ${({ big }) => (big ? "14px 48px" : "12px 30px")};
+    color: ${({ dark }) => (dark ? "#010606" : "#fff")};
+    font-size: ${({ fontBig }) => (fontBig ? "20px" : "16px")};
     outline: none;
     border: none;
     cursor: pointer;
@@ -132,42 +128,47 @@ export const Button = styled.a`
     transition: all 0.2s ease-in-out;
     text-decoration: none;
 
-    &:hover{
+    &:hover {
         transition: all 0.2s ease-in-out;
-        background: ${({ primary, themecolor }) => (primary ? '#fff' : (themecolor ? themecolor : '#01BF71'))};
+        background: ${({ primary, themecolor }) =>
+            primary ? "#fff" : themecolor ? themecolor : "#01BF71"};
     }
-`
+    @media (max-width: 480px) {
+        padding: 12px 20px;
+    }
+`;
 
 export const WorkExperience = styled.div`
     height: 800px;
-`
+`;
 
 export const ExpIcons = styled.div`
     display: flex;
-    justify-content:center ;
+    justify-content: center;
     align-items: center;
     width: 240px;
-    color: ${({themecolor}) =>  (themecolor ? themecolor : '#01BF71') }; //#01BF71;
+    color: ${({ themecolor }) =>
+        themecolor ? themecolor : "#01BF71"}; //#01BF71;
 
     @media (max-width: 780px) {
-        display: ${({skills}) => (skills ? 'show' : 'none')};//none;
+        display: ${({ skills }) => (skills ? "show" : "none")}; //none;
     }
     @media (max-width: 480px) {
-        display: ${({skills}) => (skills ? 'show' : 'none')};//none;
+        display: ${({ skills }) => (skills ? "show" : "none")}; //none;
     }
-`
+`;
 
 export const ExpIconLink = styled.a`
     padding: 5px;
     font-size: 20px;
 
     @media (max-width: 780px) {
-        font-size: ${({skills}) => (skills ? '18px' : '20px')};//none;
+        font-size: ${({ skills }) => (skills ? "18px" : "20px")}; //none;
     }
     @media (max-width: 480px) {
-        font-size: ${({skills}) => (skills ? '16px' : '20px')};//none;
+        font-size: ${({ skills }) => (skills ? "16px" : "20px")}; //none;
     }
-`
+`;
 
 export const SkillsStack = styled.div`
     display: flex;
@@ -181,7 +182,6 @@ export const SkillsStack = styled.div`
     border-radius: 8px;
     margin: 10px;
 
-
     @media (max-width: 780px) {
         height: 470px;
         width: 480px;
@@ -191,25 +191,26 @@ export const SkillsStack = styled.div`
         width: 260px;
         margin: 1px;
     }
-`
+`;
 
 export const SkillsHeading = styled.h3`
     padding: 4px;
     color: black;
     margin: 5px;
     text-align: center;
-`
+`;
 
 export const Skills = styled.div`
-    color: ${({themecolor}) =>  (themecolor ? themecolor : '#01BF71') };//#01bf71;
-
-`
+    color: ${({ themecolor }) =>
+        themecolor ? themecolor : "#01BF71"}; //#01bf71;
+`;
 
 export const HeadingH1 = styled.h1`
     font-size: 2.5rem;
-    color: ${({themecolor}) =>  (themecolor ? themecolor : '#01BF71') };//#01bf71;
+    color: ${({ themecolor }) =>
+        themecolor ? themecolor : "#01BF71"}; //#01bf71;
     text-align: center;
     @media screen and (max-width: 480px) {
         font-size: 2rem;
     }
-`
+`;

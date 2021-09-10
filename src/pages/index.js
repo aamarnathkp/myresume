@@ -1,63 +1,71 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-import Sidebar from '../components/Sidebar';
-import Navbar from '../components/Navbar';
-import HeroSection from '../components/HeroSection';
-import InfoSection from '../components/InfoSection';
-import { homeObjFive, homeObjFour, homeObjOne, homeObjThree } from '../components/InfoSection/data';
-import Hobbies from '../components/Hobbies';
-import Footer from '../components/Footer';
+import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar";
+import HeroSection from "../components/HeroSection";
+import InfoSection from "../components/InfoSection";
+import {
+    // homeObjFive,
+    homeObjFour,
+    homeObjOne,
+    homeObjThree,
+} from "../components/InfoSection/data";
+import Hobbies from "../components/Hobbies";
+import ContactMe from "../components/ContactSection";
+import Footer from "../components/Footer";
 
 const colors = {
-    'green': '#01bf71',
-    'red': 'red',
-    'yellow': '#e6b800'
-}
+    green: "#01bf71",
+    red: "#e44f4f",
+    yellow: "#e6b800",
+};
 
-const colorGrid = ['green', 'red', 'yellow'];
+const colorGrid = ["green", "red", "yellow"];
 
 const Home = () => {
-
     const [isOpen, setIsOpen] = useState(false);
-    const [theme, setTheme] = useState('#e6b800')
+    const [theme, setTheme] = useState("#e6b800");
 
     const toggle = () => {
         setIsOpen(!isOpen);
-    }
+    };
 
     const onThemeClick = () => {
         let colorGridU = [...colorGrid];
         let filteredColorGrid = colorGridU.filter((value) => {
             return colors[value] !== theme;
         });
-        let randomColor = filteredColorGrid[Math.floor(Math.random() * filteredColorGrid.length)];
-        setTheme(colors[randomColor])
-    }
+        let randomColor =
+            filteredColorGrid[
+                Math.floor(Math.random() * filteredColorGrid.length)
+            ];
+        setTheme(colors[randomColor]);
+    };
 
     const themeProps = {
         currentTheme: theme,
-        changeTheme: onThemeClick
-    }
+        changeTheme: onThemeClick,
+    };
 
     const about = {
         ...homeObjOne,
-        ...themeProps
-    }
+        ...themeProps,
+    };
 
     const experience = {
         ...homeObjThree,
-        ...themeProps
-    }
+        ...themeProps,
+    };
 
     const skills = {
         ...homeObjFour,
-        ...themeProps
-    }
+        ...themeProps,
+    };
 
-    const contact = {
-        ...homeObjFive,
-        ...themeProps
-    }
+    // const contact = {
+    //     ...homeObjFive,
+    //     ...themeProps,
+    // };
 
     return (
         <>
@@ -65,21 +73,24 @@ const Home = () => {
                 currentTheme={theme}
                 onThemeClick={() => onThemeClick()}
                 isOpen={isOpen}
-                toggle={toggle} />
+                toggle={toggle}
+            />
             <Navbar
                 currentTheme={theme}
                 toggle={toggle}
-                onThemeClick={() => onThemeClick()} />
+                onThemeClick={() => onThemeClick()}
+            />
             <HeroSection {...themeProps} />
             <InfoSection {...about} />
             {/* <InfoSection {...homeObjTwo}/>             */}
             <InfoSection {...experience} />
             <InfoSection {...skills} />
             <Hobbies currentTheme={theme} />
-            <InfoSection {...contact} />
+            {/* <InfoSection {...contact} /> */}
+            <ContactMe currentTheme={theme} />
             <Footer />
         </>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;

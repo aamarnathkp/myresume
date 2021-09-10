@@ -1,0 +1,79 @@
+.user-form {
+    border-radius: 8px;
+    display: flex;
+    width: 100%;
+    height: 95%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    background-color: rgba(59, 59, 59, 80%);
+}
+
+.user-form input {
+    width: 80%;
+    height: 30px;
+    border-radius: 6px;
+    border-style: none;
+    margin: 5px;
+    padding: 5px;
+}
+
+.user-form input:focus {
+    outline: none;
+    border: 1px solid gold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.user-form input::placeholder {
+    text-align: center;
+}
+
+.user-form textarea {
+    max-width: 80%;
+    min-width: 80%;
+    min-height: 20%;
+    max-height: 20%;
+    border-radius: 6px;
+    border-style: none;
+    margin: 5px;
+    padding: 10px;
+}
+
+.user-form textarea:focus {
+    outline: none;
+    border: 2px solid gold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.user-form textarea::placeholder {
+    text-align: left;
+    padding: 10px;
+}
+
+.error-input {
+    width: 80%;
+    height: 30px;
+    border-radius: 6px;
+    border-style: none;
+    margin: 5px;
+    color: red;
+    outline: none;
+    border: 2px solid red !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.error-input:focus {
+    outline: none;
+    border: 2px solid red;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.error-input::placeholder {
+    color: red;
+}
+
+.user-form button a {
+    text-decoration: none;
+    color: #fff;
+}
