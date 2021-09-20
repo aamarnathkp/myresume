@@ -1,30 +1,25 @@
-import React from 'react'
+import React from "react";
 
-import GreenVideo from '../../videos/video.mp4';
-import YellowVideo from '../../videos/yellow.mp4';
-import RedVideo from '../../videos/red.mp4';
+import GreenVideo from "../../videos/video.mp4";
+import YellowVideo from "../../videos/yellow.mp4";
+import RedVideo from "../../videos/red.mp4";
 
-import {
-    HeroBg,
-    VideoBg,
-
-} from './HeroElements';
+import { HeroBg, VideoBg } from "./HeroElements";
 
 const VideoBackground = ({ themecolor }) => {
-
     let video = null;
     switch (themecolor) {
-        case '#01bf71':
+        case "#01bf71":
             video = GreenVideo;
             break;
-        case '#e6b800':
+        case "#e6b800":
             video = YellowVideo;
             break;
-        case 'red':
+        case "#e44f4f":
             video = RedVideo;
             break;
         default:
-            video = GreenVideo
+            video = GreenVideo;
             break;
     }
 
@@ -32,7 +27,7 @@ const VideoBackground = ({ themecolor }) => {
         <HeroBg>
             <VideoBg autoPlay loop muted src={video} type='video/mp4' />
         </HeroBg>
-    )
-}
+    );
+};
 
-export default VideoBackground
+export default VideoBackground;
