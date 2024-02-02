@@ -169,13 +169,19 @@ export const ExpIcons = styled.div`
 export const ExpIconLink = styled.a`
     padding: 5px;
     font-size: 20px;
-    background-color: black;
+    background-color: #3f3d56;
+    border-radius: 0.2rem;
 
     @media (max-width: 780px) {
         font-size: ${({ skills }) => (skills ? "18px" : "20px")}; //none;
     }
     @media (max-width: 480px) {
         font-size: ${({ skills }) => (skills ? "16px" : "20px")}; //none;
+    }
+
+    &:hover {
+        transform: scale(1.35);
+        transition: all 0.2s ease-in-out;
     }
 `;
 

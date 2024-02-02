@@ -8,7 +8,7 @@ import {
     FaJenkins,
 } from "react-icons/fa";
 import { MdDialerSip } from "react-icons/md";
-import { SiNginx, SiJavascript, SiMysql } from "react-icons/si";
+import { SiNginx, SiJavascript, SiMysql, SiTypescript } from "react-icons/si";
 import Tooltip from "@material-ui/core/Tooltip";
 
 const ExperienceIcons = (props) => {
@@ -17,6 +17,9 @@ const ExperienceIcons = (props) => {
     switch (skill) {
         case "react":
             expIcon = <FaReact />;
+            break;
+        case "erlang":
+            expIcon = <FaErlang />;
             break;
         case "html":
             expIcon = <FaHtml5 />;
@@ -39,8 +42,11 @@ const ExperienceIcons = (props) => {
         case "sip":
             expIcon = <MdDialerSip />;
             break;
+        case "typescript":
+            expIcon = <SiTypescript />;
+            break;
         default:
-            expIcon = <FaErlang />;
+            expIcon = skill;
     }
 
     return (
