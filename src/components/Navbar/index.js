@@ -50,7 +50,7 @@ const Navbar = ({ toggle, onThemeClick, currentTheme }) => {
                     <NavbarContainer>
                         <NavLogo to='/' onClick={toggleHome}>
                             {/* MyFrames */}
-                            <NavLogoImg src={Logo} />
+                            <NavLogoImg src={Logo} alt='Logo' />
                         </NavLogo>
                         <MobileIcon onClick={toggle}>
                             <FaBars />
@@ -59,6 +59,7 @@ const Navbar = ({ toggle, onThemeClick, currentTheme }) => {
                             <NavItem>
                                 <NavLinks
                                     themecolor={currentTheme}
+                                    aria-label='about'
                                     to='about'
                                     smooth={true}
                                     duration={500}
@@ -74,6 +75,7 @@ const Navbar = ({ toggle, onThemeClick, currentTheme }) => {
                             <NavItem>
                                 <NavLinks
                                     themecolor={currentTheme}
+                                    aria-label='work experience'
                                     to='experience'
                                     smooth={true}
                                     duration={500}
@@ -86,6 +88,7 @@ const Navbar = ({ toggle, onThemeClick, currentTheme }) => {
                             <NavItem>
                                 <NavLinks
                                     themecolor={currentTheme}
+                                    aria-label='skills'
                                     to='skills'
                                     smooth={true}
                                     duration={500}
@@ -98,6 +101,7 @@ const Navbar = ({ toggle, onThemeClick, currentTheme }) => {
                             <NavItem>
                                 <NavLinks
                                     themecolor={currentTheme}
+                                    aria-label='hobbies'
                                     to='hobbies'
                                     smooth={true}
                                     duration={500}
@@ -110,6 +114,7 @@ const Navbar = ({ toggle, onThemeClick, currentTheme }) => {
                             <NavItem>
                                 <NavLinks
                                     themecolor={currentTheme}
+                                    aria-label='contact'
                                     to='contact'
                                     smooth={true}
                                     duration={500}
@@ -122,6 +127,8 @@ const Navbar = ({ toggle, onThemeClick, currentTheme }) => {
                         </NavMenu>
                         <ThemeSelection>
                             <Theme
+                                id='themeBtn'
+                                aria-label='Theme Change'
                                 themecolor={currentTheme}
                                 onClick={onThemeClick}
                                 onMouseEnter={() => {

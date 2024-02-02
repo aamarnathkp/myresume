@@ -34,10 +34,13 @@ const HeroSection = ({ currentTheme, myExperience }) => {
     return (
         <HeroContainer id={"home"}>
             <VideoBackground themecolor={currentTheme} />
-            <HeroContent>
+            <HeroContent themecolor={currentTheme}>
                 <HeroIntro>Hi, I'm</HeroIntro>
-                <HeroH1>Amarnath K P</HeroH1>
-                <HeroP>{`Software engineer with ${myExperience} of experience`}</HeroP>
+                <HeroH1 themecolor={currentTheme}>Amarnath K P</HeroH1>
+                <HeroP
+                    themecolor={
+                        currentTheme
+                    }>{`Software engineer with ${myExperience} of experience`}</HeroP>
                 <SocialIcons>
                     <SocialIconLink
                         href='https://www.facebook.com/aamarnath.kp/'

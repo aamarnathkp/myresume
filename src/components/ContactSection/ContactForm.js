@@ -128,7 +128,11 @@ const ContactForm = ({ theme, setFormSubmitted }) => {
                     SUBMIT
                 </Button>
                 <Button themecolor={theme} active={true} type='button'>
-                    <a href='mailto:aamarnathkp@gmail.com'>Send email</a>
+                    <a
+                        href='mailto:aamarnathkp@gmail.com'
+                        style={{ color: "black" }}>
+                        Send email
+                    </a>
                 </Button>
             </div>
         </form>

@@ -77,7 +77,7 @@ const Footer = () => {
                     <SocialMediaWrap>
                         <SocialLogo to='/' onClick={toggleHome}>
                             {/* MyFrames */}
-                            <LogoImg src={Logo} />
+                            <LogoImg src={Logo} aria-label='Logo' />
                         </SocialLogo>
                         <WebsiteRights>
                             aamarnathkp © {new Date().getFullYear()} All rights
