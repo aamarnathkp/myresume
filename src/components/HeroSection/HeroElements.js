@@ -1,9 +1,8 @@
-import styled from 'styled-components';
-import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md';
-
+import styled from "styled-components";
+import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 
 export const HeroContainer = styled.div`
-    background : #0c0c0c;
+    background: #0c0c0c;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,18 +12,21 @@ export const HeroContainer = styled.div`
     z-index: 1;
 
     :before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(180deg, rgb(0,0,0,0.2) 0%, rgb(0,0,0,0.6) 100%),
-        linear-gradient(180deg, rgb(0,0,0,0.2) 0%, transparent 100%);
-        z-index:2;
+        background: linear-gradient(
+                180deg,
+                rgb(0, 0, 0, 0.2) 0%,
+                rgb(0, 0, 0, 0.6) 100%
+            ),
+            linear-gradient(180deg, rgb(0, 0, 0, 0.2) 0%, transparent 100%);
+        z-index: 2;
     }
-
-`
+`;
 
 export const HeroBg = styled.div`
     position: absolute;
@@ -35,7 +37,7 @@ export const HeroBg = styled.div`
     width: 100%;
     height: 100%;
     overflow: hidden;
-`
+`;
 
 export const VideoBg = styled.video`
     width: 100%;
@@ -43,24 +45,28 @@ export const VideoBg = styled.video`
     -o-object-fit: cover;
     object-fit: cover;
     background: #232a34;
-`
+`;
 
 export const HeroContent = styled.div`
-    z-index:3;
+    z-index: 3;
     max-width: 1200px;
     position: absolute;
     padding: 8px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
-`
+`;
+
+export const HeroIntro = styled.h3`
+    color: #f7f7f7;
+    text-align: center;
+`;
 
 export const HeroH1 = styled.h1`
     color: #fff;
     font-size: 48px;
-    text-align : center;
-    transition: all 0.2s ease-in-out;   
-
+    text-align: center;
+    transition: all 0.2s ease-in-out;
 
     @media screen and (max-width: 768px) {
         font-size: 40px;
@@ -72,18 +78,18 @@ export const HeroH1 = styled.h1`
 
     &:hover {
         @media screen and (max-width: 480px) {
-            transform: scale(1.30);
-        };
-        transform: scale(2.02);          
+            transform: scale(1.3);
+        }
+        transform: scale(2.02);
     }
-`
+`;
 
 export const HeroP = styled.p`
     margin-top: 24px;
     color: #fff;
     font-size: 24px;
     text-align: center;
-    max-width:600px;
+    max-width: 600px;
 
     @media screen and (max-width: 768px) {
         font-size: 24px;
@@ -92,8 +98,7 @@ export const HeroP = styled.p`
     @media screen and (max-width: 480px) {
         font-size: 18px;
     }
-    
-`
+`;
 
 export const HeroBtnWrapper = styled.div`
     margin-top: 32px;
@@ -101,33 +106,31 @@ export const HeroBtnWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     /* text-align:center; */
-`
+`;
 
 export const ArrowForward = styled(MdArrowForward)`
     margin-left: 8px;
     font-size: 20px;
-`
+`;
 export const ArrowRight = styled(MdKeyboardArrowRight)`
     margin-left: 8px;
-    font-size: 20px;    
-`
+    font-size: 20px;
+`;
 export const SocialIcons = styled.div`
     margin-top: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 240px;
-`
+`;
 
 export const SocialIconLink = styled.a`
     color: #fff;
     font-size: 24px;
 
-
     &:hover {
         transform: scale(2.02);
         transition: all 0.2s ease-in-out;
         cursor: pointer;
-        
     }
-`
+`;
