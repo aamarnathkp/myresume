@@ -44,7 +44,8 @@ export const Column1 = styled.div`
     grid-area: col1;
 
     &:hover {
-        transform: scale(1.02);
+        transform: ${({ id }) =>
+            id === "experience" ? "none" : "scale(1.02)"};
         transition: all 0.2s ease-in-out;
     }
 `;
@@ -118,7 +119,7 @@ export const Button = styled.a`
         primary ? (themecolor ? themecolor : "#010606") : "#010606"};
     white-space: nowrap;
     padding: ${({ big }) => (big ? "14px 48px" : "12px 30px")};
-    color: ${({ dark }) => (dark ? "#010606" : "#fff")};
+    color: ${({ dark }) => (dark ? "#010606" : "black")};
     font-size: ${({ fontBig }) => (fontBig ? "20px" : "16px")};
     outline: none;
     border: none;
@@ -130,8 +131,9 @@ export const Button = styled.a`
 
     &:hover {
         transition: all 0.2s ease-in-out;
+        color: ${({ themecolor }) => themecolor};
         background: ${({ primary, themecolor }) =>
-            primary ? "#fff" : themecolor ? themecolor : "#01BF71"};
+            primary ? "black" : themecolor ? themecolor : "#01BF71"};
     }
     @media (max-width: 480px) {
         padding: 12px 20px;
@@ -144,9 +146,11 @@ export const WorkExperience = styled.div`
 
 export const ExpIcons = styled.div`
     display: flex;
+    padding: 0 0.5rem 1rem 0.5rem;
     justify-content: center;
     align-items: center;
-    width: 240px;
+    gap: 1rem;
+    width: 100%;
     color: ${({ themecolor }) =>
         themecolor ? themecolor : "#01BF71"}; //#01BF71;
 

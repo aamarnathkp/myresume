@@ -13,6 +13,7 @@ import {
 import Hobbies from "../components/Hobbies";
 import ContactMe from "../components/ContactSection";
 import Footer from "../components/Footer";
+import { calculateExperience } from "../utils/utils";
 
 const colors = {
     green: "#01bf71",
@@ -30,6 +31,8 @@ const Home = () => {
         setIsOpen(!isOpen);
     };
 
+    const myExperience = calculateExperience();
+
     const onThemeClick = () => {
         let colorGridU = [...colorGrid];
         let filteredColorGrid = colorGridU.filter((value) => {
@@ -45,6 +48,7 @@ const Home = () => {
     const themeProps = {
         currentTheme: theme,
         changeTheme: onThemeClick,
+        myExperience,
     };
 
     const about = {
@@ -62,11 +66,6 @@ const Home = () => {
         ...themeProps,
     };
 
-    // const contact = {
-    //     ...homeObjFive,
-    //     ...themeProps,
-    // };
-
     return (
         <>
             <Sidebar
@@ -82,11 +81,9 @@ const Home = () => {
             />
             <HeroSection {...themeProps} />
             <InfoSection {...about} />
-            {/* <InfoSection {...homeObjTwo}/>             */}
             <InfoSection {...experience} />
             <InfoSection {...skills} />
             <Hobbies currentTheme={theme} />
-            {/* <InfoSection {...contact} /> */}
             <ContactMe currentTheme={theme} />
             <Footer />
         </>
