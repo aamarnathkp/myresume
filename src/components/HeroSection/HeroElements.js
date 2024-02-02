@@ -55,18 +55,28 @@ export const HeroContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: ${({ themecolor }) => `${themecolor}20`};
+    border-radius: 2rem;
+    padding: 1rem 1.5rem 1rem 2rem;
 `;
 
 export const HeroIntro = styled.h3`
     color: #f7f7f7;
     text-align: center;
+    margin-bottom: 1rem;
 `;
 
 export const HeroH1 = styled.h1`
-    color: #fff;
+    color: ${({ themecolor }) => themecolor};
     font-size: 48px;
     text-align: center;
     transition: all 0.2s ease-in-out;
+    /* text-shadow: ${({ themecolor }) => `0.5px 0.5px 2px white`}; */
+    background: #00000095;
+    border-radius: 1rem;
+    padding: 0.25rem 2rem 0.25rem 2rem;
+    border-color: ${({ themecolor }) => themecolor};
+    /* border: solid; */
 
     @media screen and (max-width: 768px) {
         font-size: 40px;
@@ -81,15 +91,20 @@ export const HeroH1 = styled.h1`
             transform: scale(1.3);
         }
         transform: scale(2.02);
+        border: solid;
+        border-color: ${({ themecolor }) => themecolor};
     }
 `;
 
 export const HeroP = styled.p`
     margin-top: 24px;
-    color: #fff;
     font-size: 24px;
     text-align: center;
+    padding: 1rem;
     max-width: 600px;
+    color: ${({ themecolor }) => themecolor};
+    background: #00000095;
+    border-radius: 1rem;
 
     @media screen and (max-width: 768px) {
         font-size: 24px;

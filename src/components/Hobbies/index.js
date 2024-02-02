@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import Icon1 from '../../images/hobbies4.svg';
 // import Icon2 from '../../images/hobbies.svg';
 // import Icon3 from '../../images/hobbies5.svg';
-import { imageSelector } from '../imageSelection';
-import HobbieModal from '../Modal';
+import { imageSelector } from "../imageSelection";
+import HobbieModal from "../Modal";
 
 import {
     ServicesContainer,
@@ -12,39 +12,40 @@ import {
     ServicesCard,
     ServicesIcon,
     ServicesH2,
-    ServicesP
-} from './HobbiesElements';
+    ServicesP,
+} from "./HobbiesElements";
 
 const Hobbies = ({ currentTheme }) => {
-
     const [modalStatus, setModalStatus] = useState({
-        status : false,
-        hobbie : null
+        status: false,
+        hobbie: null,
     });
 
     const onModalClose = () => {
         setModalStatus({
-            status : false,
-            hobbie : null
+            status: false,
+            hobbie: null,
         });
-    }
+    };
 
     const onModalOpen = (hobbie) => {
         setModalStatus({
-            status : true,
-            hobbie : hobbie
+            status: true,
+            hobbie: hobbie,
         });
-    }
+    };
 
     let modal = null;
-    let {status, hobbie} = modalStatus;
+    let { status, hobbie } = modalStatus;
     if (status) {
-        modal = <HobbieModal
-            open={status}
-            hobbie= {hobbie}
-            themecolor={currentTheme}
-            modalClose={onModalClose}
-        />
+        modal = (
+            <HobbieModal
+                open={status}
+                hobbie={hobbie}
+                themecolor={currentTheme}
+                modalClose={onModalClose}
+            />
+        );
     }
 
     return (
@@ -53,25 +54,40 @@ const Hobbies = ({ currentTheme }) => {
             <ServicesContainer id='hobbies'>
                 <ServicesH1>My Hobbies</ServicesH1>
                 <ServicesWrapper>
-                    <ServicesCard onClick={() => onModalOpen('photography')}>
-                        <ServicesIcon src={imageSelector(currentTheme, 'hobbie1')} />
+                    <ServicesCard onClick={() => onModalOpen("photography")}>
+                        <ServicesIcon
+                            src={imageSelector(currentTheme, "hobbie1")}
+                            alt='photograhy-image'
+                        />
                         <ServicesH2>Photography</ServicesH2>
-                        <ServicesP>Like to click moments and cherish memories, also interested in Fashion, Pets and Portrait photography</ServicesP>
+                        <ServicesP>
+                            Like to click moments and cherish memories, also
+                            interested in Fashion, Pets and Portrait photography
+                        </ServicesP>
                     </ServicesCard>
-                    <ServicesCard onClick={() => onModalOpen('art')}>
-                        <ServicesIcon src={imageSelector(currentTheme, 'hobbie2')} />
+                    <ServicesCard onClick={() => onModalOpen("art")}>
+                        <ServicesIcon
+                            src={imageSelector(currentTheme, "hobbie2")}
+                            alt='digital-art-image'
+                        />
                         <ServicesH2>Digital Art</ServicesH2>
-                        <ServicesP>Likes to create portraits and digital painting using procreate</ServicesP>
+                        <ServicesP>
+                            Likes to create portraits and digital painting using
+                            procreate
+                        </ServicesP>
                     </ServicesCard>
                     <ServicesCard>
-                        <ServicesIcon src={imageSelector(currentTheme, 'hobbie3')} />
+                        <ServicesIcon
+                            src={imageSelector(currentTheme, "hobbie3")}
+                            alt='gaming-image'
+                        />
                         <ServicesH2>Gaming</ServicesH2>
                         <ServicesP>Likes to play games</ServicesP>
                     </ServicesCard>
                 </ServicesWrapper>
             </ServicesContainer>
         </>
-    )
-}
+    );
+};
 
-export default Hobbies
+export default Hobbies;

@@ -19,7 +19,10 @@ const ContactMe = ({ currentTheme }) => {
     return (
         <ContactContainer id='contact'>
             <ContactImageContainer>
-                <ContactImage src={imageSelector(currentTheme, "contact")} />
+                <ContactImage
+                    src={imageSelector(currentTheme, "contact")}
+                    alt='contact-image'
+                />
             </ContactImageContainer>
             <ContactFormContainer theme={currentTheme}>
                 {formSubmitted ? (
