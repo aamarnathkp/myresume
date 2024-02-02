@@ -1,27 +1,7 @@
 import React from "react";
-import {
-    FaReact,
-    FaErlang,
-    FaGitSquare,
-    FaHtml5,
-    FaJenkins,
-} from "react-icons/fa";
-import { MdDialerSip } from "react-icons/md";
-import {
-    SiNginx,
-    SiJavascript,
-    SiMysql,
-    SiTypescript,
-    // SiPlaywright,
-} from "react-icons/si";
 
-import {
-    ExpIcons,
-    ExpIconLink,
-    SkillsStack,
-    SkillsHeading,
-    Skills,
-} from "./InfoElements";
+import ExperienceIcons from "./ExperienceIcons.jsx";
+import { ExpIcons, SkillsStack, SkillsHeading, Skills } from "./InfoElements";
 
 const SkillsSection = ({ currentTheme }) => {
     return (
@@ -31,24 +11,11 @@ const SkillsSection = ({ currentTheme }) => {
                     Key Skills
                 </SkillsHeading>
                 <ExpIcons skills themecolor={currentTheme}>
-                    <ExpIconLink aria-label='Erlang' skills>
-                        <FaErlang />
-                    </ExpIconLink>
-                    <ExpIconLink aria-label='React' skills>
-                        <FaReact />
-                    </ExpIconLink>
-                    <ExpIconLink aria-label='SiJavascript' skills>
-                        <SiJavascript />
-                    </ExpIconLink>
-                    <ExpIconLink aria-label='FaHtml5' skills>
-                        <FaHtml5 />
-                    </ExpIconLink>
-                    <ExpIconLink aria-label='SiTypescript' skills>
-                        <SiTypescript />
-                    </ExpIconLink>
-                    {/* <ExpIconLink aria-label='MdDialerSip' skills>
-                            <SiPlaywright />
-                        </ExpIconLink> */}
+                    <ExperienceIcons skill='erlang' />
+                    <ExperienceIcons skill='react' />
+                    <ExperienceIcons skill='javascript' />
+                    <ExperienceIcons skill='html' />
+                    <ExperienceIcons skill='typescript' />
                 </ExpIcons>
             </Skills>
             <Skills themecolor={currentTheme}>
@@ -56,32 +23,18 @@ const SkillsSection = ({ currentTheme }) => {
                     Database
                 </SkillsHeading>
                 <ExpIcons skills themecolor={currentTheme}>
-                    <ExpIconLink aria-label='Erlang' skills>
-                        Mnesia
-                    </ExpIconLink>
-                    <ExpIconLink aria-label='React' skills>
-                        CouchDB
-                    </ExpIconLink>
-                    <ExpIconLink aria-label='SiMysql' skills>
-                        <SiMysql />
-                    </ExpIconLink>
+                    <ExperienceIcons skill='Mnesia' />
+                    <ExperienceIcons skill='CouchDB' />
+                    <ExperienceIcons skill='mysql' />
                 </ExpIcons>
             </Skills>
             <Skills themecolor={currentTheme}>
                 <SkillsHeading>Others</SkillsHeading>
                 <ExpIcons skills themecolor={currentTheme}>
-                    <ExpIconLink aria-label='FaGitSquare'>
-                        <FaGitSquare />
-                    </ExpIconLink>
-                    <ExpIconLink aria-label='FaJenkins'>
-                        <FaJenkins />
-                    </ExpIconLink>
-                    <ExpIconLink aria-label='SiNginx'>
-                        <SiNginx />
-                    </ExpIconLink>
-                    <ExpIconLink aria-label='MdDialerSip'>
-                        <MdDialerSip />
-                    </ExpIconLink>
+                    <ExperienceIcons skill='git' />
+                    <ExperienceIcons skill='jenkins' />
+                    <ExperienceIcons skill='nginix' />
+                    <ExperienceIcons skill='sip' />
                 </ExpIcons>
             </Skills>
         </SkillsStack>
