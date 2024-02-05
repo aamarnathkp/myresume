@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const InfoContainer = styled.div`
     color: #fff;
-    background: ${({ lightBg }) => (lightBg ? "#f7f7f795" : "#01060690")};
+    background: ${({ lightBg, currentTheme }) =>
+        lightBg ? `${currentTheme}20` : "#01060690"};
 `;
 
 export const InfoBackgroundText = styled.div`
@@ -14,7 +15,7 @@ export const InfoBackgroundText = styled.div`
     text-overflow: clip;
     width: 100%;
     height: 50%;
-    background: ${({ themecolor }) => themecolor};
+    background: ${({ themecolor }) => `${themecolor}85`};
     /* transform: ${({ lightBg }) =>
         lightBg ? " rotate(-90deg)" : "rotate(0deg)"}; */
 
@@ -47,6 +48,11 @@ export const InfoWrapper = styled.div`
 
     @media screen and (max-width: 768px) {
         height: ${({ type }) => (type === "experience" ? "100vh" : "100%")};
+    }
+
+    @media screen and (max-width: 480px) {
+        height: 100%;
+        padding: 4rem 0 4rem 0;
     }
 `;
 

@@ -5,7 +5,7 @@ export const ContactContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f9f9f9;
+    background: ${({ currentTheme }) => `${currentTheme}20`};
 
     @media screen and (max-width: 768px) {
         height: auto;
