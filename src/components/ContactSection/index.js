@@ -6,6 +6,7 @@ import {
     ContactImage,
     ContactFormContainer,
     FormSuccess,
+    ContactFormH3,
 } from "./ContactElements";
 import { InfoBackgroundText } from "../InfoSection/InfoElements";
 import { imageSelector } from "../imageSelection";
@@ -30,7 +31,7 @@ const ContactMe = ({ currentTheme }) => {
             </ContactImageContainer>
             <ContactFormContainer theme={currentTheme}>
                 {formSubmitted ? (
-                    <FormSuccess>
+                    <FormSuccess currentTheme={currentTheme}>
                         <h4>Form Submitted Successfully</h4>
                         <p style={{ marginBottom: "5px" }}>
                             Thank You for your valuable feedback
@@ -39,14 +40,14 @@ const ContactMe = ({ currentTheme }) => {
                             <Button
                                 // to='home'
                                 href={Resume}
-                                themecolor={currentTheme}
+                                themecolor={`${currentTheme}`}
                                 download
                                 smooth={true}
                                 duration={500}
                                 spy={true}
                                 exact='true'
                                 offset={-80}
-                                primary={0}
+                                primary={1}
                                 dark={0}
                                 dark2={1}>
                                 Download Resume
@@ -55,7 +56,9 @@ const ContactMe = ({ currentTheme }) => {
                     </FormSuccess>
                 ) : (
                     <>
-                        <h3 style={{ textAlign: "center" }}>CONTACT</h3>
+                        <ContactFormH3 theme={currentTheme}>
+                            CONTACT ME
+                        </ContactFormH3>
                         <ContactForm
                             setFormSubmitted={setFormSubmitted}
                             theme={currentTheme}

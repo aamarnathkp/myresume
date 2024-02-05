@@ -6,6 +6,7 @@ import CustomizedRatings from "../../utils/ui/Rating";
 import useInput from "../../utils/hooks/useInput";
 import classes from "./Form.module.css";
 import Button from "../UI/Button";
+import { UserForm } from "./ContactElements";
 // import { Button } from "../ButtonElement";
 
 const emailRegex =
@@ -84,7 +85,10 @@ const ContactForm = ({ theme, setFormSubmitted }) => {
         isFeedbackValid;
 
     return (
-        <form className={classes["user-form"]} onSubmit={onSubmitHandler}>
+        <UserForm
+            className={classes["user-form"]}
+            onSubmit={onSubmitHandler}
+            theme={theme}>
             <input
                 className={isUserNameValid}
                 value={nameValue}
@@ -135,7 +139,7 @@ const ContactForm = ({ theme, setFormSubmitted }) => {
                     </a>
                 </Button>
             </div>
-        </form>
+        </UserForm>
     );
 };
 

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
-import Logo from "../../images/myframes_white.png";
 import { AiOutlineFormatPainter } from "react-icons/ai";
 import { RiPaintBrushFill } from "react-icons/ri";
+
+import Logo from "../Logo/Logo";
 
 import {
     Nav,
@@ -14,7 +15,6 @@ import {
     NavMenu,
     NavItem,
     NavLinks,
-    NavLogoImg,
     ThemeSelection,
     Theme,
 } from "./NavbarElements";
@@ -46,11 +46,11 @@ const Navbar = ({ toggle, onThemeClick, currentTheme }) => {
     return (
         <>
             <IconContext.Provider value={{ color: "#fff" }}>
-                <Nav scrollNav={scrollNav}>
+                <Nav scrollNav={scrollNav} themecolor={currentTheme}>
                     <NavbarContainer>
                         <NavLogo to='/' onClick={toggleHome}>
                             {/* MyFrames */}
-                            <NavLogoImg src={Logo} alt='Logo' />
+                            <Logo themecolor={currentTheme} />
                         </NavLogo>
                         <MobileIcon onClick={toggle}>
                             <FaBars />
