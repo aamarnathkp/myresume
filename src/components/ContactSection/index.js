@@ -7,6 +7,7 @@ import {
     ContactFormContainer,
     FormSuccess,
 } from "./ContactElements";
+import { InfoBackgroundText } from "../InfoSection/InfoElements";
 import { imageSelector } from "../imageSelection";
 import ContactForm from "./ContactForm";
 import { BtnWrap, Button } from "../InfoSection/InfoElements";
@@ -18,6 +19,9 @@ const ContactMe = ({ currentTheme }) => {
 
     return (
         <ContactContainer id='contact' currentTheme={currentTheme}>
+            <InfoBackgroundText themecolor={currentTheme}>
+                Contact
+            </InfoBackgroundText>
             <ContactImageContainer>
                 <ContactImage
                     src={imageSelector(currentTheme, "contact")}
