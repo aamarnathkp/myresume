@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ContactContainer = styled.div`
+    position: "relative";
     height: 90vh;
     display: flex;
     justify-content: center;
@@ -9,6 +10,12 @@ export const ContactContainer = styled.div`
 
     @media screen and (max-width: 768px) {
         height: auto;
+        /* padding: 6rem 0 6rem 0; */
+    }
+
+    @media screen and (max-width: 480px) {
+        height: auto;
+        padding: 6rem 0 6rem 0;
     }
 `;
 
