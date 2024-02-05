@@ -42,8 +42,8 @@ export const NavLogo = styled(LinkR)`
 `;
 
 export const NavLogoImg = styled.img`
-    width: auto;
-    height: 150px;
+    width: 100px;
+    height: auto;
     /* margin: 0 0 10px 0;
     padding-right: 0; */
 `;

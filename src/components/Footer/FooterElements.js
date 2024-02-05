@@ -2,11 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const FooterContainer = styled.footer`
-    background-color: #101522;
-
-    @media (max-width: 480px) {
-        background-color: black;
-    }
+    background-color: ${({ currentTheme }) => `${currentTheme}50`};
 `;
 
 export const FooterWrap = styled.div`
@@ -85,6 +81,7 @@ export const SocialMediaWrap = styled.div`
     align-items: center;
     max-width: 1100px;
     margin: 40px auto 0 auto;
+    color: ${({ currentTheme }) => `${currentTheme}`};
 
     @media screen and (max-width: 820px) {
         flex-direction: column;
@@ -104,14 +101,11 @@ export const SocialLogo = styled(Link)`
 `;
 
 export const LogoImg = styled.img`
-    width: auto;
-    height: 150px;
-    /* margin: 0 0 10px 0;
-    padding-right: 0; */
+    width: 150px;
+    height: auto;
 `;
 
 export const WebsiteRights = styled.small`
-    color: #fff;
     margin-bottom: 16px;
 `;
 
@@ -123,7 +117,8 @@ export const SocialIcons = styled.div`
 `;
 
 export const SocialIconLink = styled.a`
-    color: #fff;
+    color: ${({ currentTheme }) => `${currentTheme}`};
+    filter: brightness(0.5);
     font-size: 24px;
 `;
 export const SiteLogo = styled.img``;

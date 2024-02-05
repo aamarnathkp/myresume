@@ -85,7 +85,7 @@ const Home = () => {
             <InfoSection {...skills} />
             <Hobbies currentTheme={theme} />
             <ContactMe currentTheme={theme} />
-            <Footer />
+            <Footer currentTheme={theme} />
         </>
     );
 };
