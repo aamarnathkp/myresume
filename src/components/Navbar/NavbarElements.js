@@ -1,10 +1,9 @@
-import styled from 'styled-components';
-import {Link as LinkR} from 'react-router-dom'
-import {Link as LinkS} from 'react-scroll'
-
+import styled from "styled-components";
+import { Link as LinkR } from "react-router-dom";
+import { Link as LinkS } from "react-scroll";
 
 export const Nav = styled.nav`
-    background: ${({ scrollNav }) => (scrollNav ? '#000' : 'transparent')};
+    background: ${({ scrollNav }) => (scrollNav ? "#000" : "transparent")};
     height: 80px;
     margin-top: -80px;
     display: flex;
@@ -30,7 +29,6 @@ export const NavbarContainer = styled.div`
     max-width: 1100px;
 `;
 
-
 export const NavLogo = styled(LinkR)`
     color: #fff;
     justify-self: flex-start;
@@ -48,12 +46,12 @@ export const NavLogoImg = styled.img`
     height: 150px;
     /* margin: 0 0 10px 0;
     padding-right: 0; */
-`
+`;
 
 export const MobileIcon = styled.div`
     display: none;
 
-    @media screen and (max-width : 768px) {
+    @media screen and (max-width: 768px) {
         display: block;
         position: absolute;
         top: 0;
@@ -61,9 +59,9 @@ export const MobileIcon = styled.div`
         transform: translate(-100%, 60%);
         font-size: 1.8rem;
         cursor: pointer;
-        color: #fff
-    } 
-`
+        color: #fff;
+    }
+`;
 
 export const NavMenu = styled.ul`
     display: flex;
@@ -75,12 +73,11 @@ export const NavMenu = styled.ul`
     @media screen and (max-width: 768px) {
         display: none;
     }
-`
+`;
 
 export const NavItem = styled.li`
     height: 80px;
-
-`
+`;
 
 export const NavLinks = styled(LinkS)`
     color: #fff;
@@ -92,15 +89,17 @@ export const NavLinks = styled(LinkS)`
     cursor: pointer;
 
     &.active {
-        border-bottom: ${({themecolor}) =>  (themecolor ? `3px solid ${themecolor}` : '#3px solid #01bf71') };//#01bf71;
+        border-bottom: ${({ themecolor }) =>
+            themecolor
+                ? `3px solid ${themecolor}`
+                : "#3px solid #01bf71"}; //#01bf71;
     }
-`
+`;
 
 export const ThemeSelection = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-
 
     @media screen and (max-width: 768px) {
         display: none;
@@ -109,7 +108,8 @@ export const ThemeSelection = styled.div`
 
 export const Theme = styled.button`
     border-radius: 24px;
-    background: ${({themecolor}) =>  (themecolor ? themecolor : '#01BF71') };//#01bf71;
+    background: ${({ themecolor }) =>
+        themecolor ? themecolor : "#01BF71"}; //#01bf71;
     white-space: nowrap;
     padding: 10px 22px;
     color: #010606;
@@ -127,4 +127,4 @@ export const Theme = styled.button`
         background: #fff;
         color: #01bf71;
     }
-`
+`;

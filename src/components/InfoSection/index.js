@@ -10,6 +10,7 @@ import { imageSelector } from "../imageSelection";
 import {
     InfoContainer,
     InfoWrapper,
+    InfoBackgroundText,
     InfoRow,
     Column1,
     TextWrapper,
@@ -86,6 +87,12 @@ const InfoSection = ({
 
     return (
         <InfoContainer lightBg={lightBg} id={id}>
+            <InfoBackgroundText
+                themecolor={currentTheme}
+                lightBg={lightBg}
+                id={id}>
+                {id}
+            </InfoBackgroundText>
             <InfoWrapper type={type}>
                 <InfoRow imgStart={imgStart}>
                     <Column1 id={id}>{columns1}</Column1>

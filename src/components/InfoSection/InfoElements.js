@@ -2,14 +2,37 @@ import styled from "styled-components";
 
 export const InfoContainer = styled.div`
     color: #fff;
-    background: ${({ lightBg }) => (lightBg ? "#f9f9f9" : "#010606")};
+    background: ${({ lightBg }) => (lightBg ? "#f7f7f795" : "#01060690")};
+`;
 
+export const InfoBackgroundText = styled.div`
+    z-index: -1;
+    font-size: 10rem;
+    position: absolute;
+    color: #f7f7f750;
+    text-align: center;
+    text-overflow: clip;
+    width: 100%;
+    height: 50%;
+    background: ${({ themecolor }) => themecolor};
+    /* transform: ${({ lightBg }) =>
+        lightBg ? " rotate(-90deg)" : "rotate(0deg)"}; */
+
+    @media screen and (max-width: 900px) {
+        font-size: 8rem;
+    }
     @media screen and (max-width: 768px) {
-        padding: 100px 0;
+        font-size: 6rem;
+    }
+
+    @media screen and (max-width: 480px) {
+        padding-top: 4rem;
+        font-size: 4rem;
     }
 `;
 
 export const InfoWrapper = styled.div`
+    position: "relative";
     display: grid;
     z-index: 1;
     height: ${({ type }) => (type === "experience" ? "100%" : "100vh")};
@@ -19,9 +42,11 @@ export const InfoWrapper = styled.div`
     margin-left: auto;
     padding: 0 24px;
     justify-content: center;
+    padding-bottom: 2rem;
+    overflow-y: ${({ type }) => (type === "experience" ? "visible" : "none")};
 
     @media screen and (max-width: 768px) {
-        height: auto;
+        height: ${({ type }) => (type === "experience" ? "100vh" : "100%")};
     }
 `;
 
@@ -150,13 +175,9 @@ export const ExpIcons = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding: 0 0.5rem 1rem 0.5rem; */
     gap: 1rem;
-    /* height: 100%;
-    width: 100%; */
     color: ${({ themecolor }) =>
         themecolor ? themecolor : "#01BF71"}; //#01BF71;
-    /* background-color: black; */
 
     @media (max-width: 780px) {
         display: ${({ skills }) => (skills ? "show" : "none")}; //none;
