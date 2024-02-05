@@ -14,6 +14,7 @@ import {
     ServicesH2,
     ServicesP,
 } from "./HobbiesElements";
+import { InfoBackgroundText } from "../InfoSection/InfoElements";
 
 const Hobbies = ({ currentTheme }) => {
     const [modalStatus, setModalStatus] = useState({
@@ -51,7 +52,10 @@ const Hobbies = ({ currentTheme }) => {
     return (
         <>
             {modal}
-            <ServicesContainer id='hobbies'>
+            <ServicesContainer id='hobbies' currentTheme={currentTheme}>
+                <InfoBackgroundText themecolor={currentTheme}>
+                    Hobbies
+                </InfoBackgroundText>
                 <ServicesH1>My Hobbies</ServicesH1>
                 <ServicesWrapper>
                     <ServicesCard onClick={() => onModalOpen("photography")}>

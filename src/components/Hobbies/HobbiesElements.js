@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const ServicesContainer = styled.div`
-    height: 100vh;
+    height: 100%;
+    padding: 6rem 0 6rem 0;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background: #010606;
+    background: ${({ currentTheme }) => `${currentTheme}75`};
+    gap: 3rem;
 
     @media screen and (max-width: 768px) {
         height: auto;
@@ -64,7 +66,7 @@ export const ServicesIcon = styled.img`
 
 export const ServicesH1 = styled.h1`
     font-size: 2.5rem;
-    color: #fff;
+    color: #3f3d56;
     /* margin-bottom: 64px; */
 
     &:hover {

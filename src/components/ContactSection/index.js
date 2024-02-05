@@ -17,7 +17,7 @@ const ContactMe = ({ currentTheme }) => {
     console.log("form submitted", formSubmitted);
 
     return (
-        <ContactContainer id='contact'>
+        <ContactContainer id='contact' currentTheme={currentTheme}>
             <ContactImageContainer>
                 <ContactImage
                     src={imageSelector(currentTheme, "contact")}

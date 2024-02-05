@@ -86,7 +86,7 @@ const InfoSection = ({
     }
 
     return (
-        <InfoContainer lightBg={lightBg} id={id}>
+        <InfoContainer lightBg={lightBg} currentTheme={currentTheme} id={id}>
             <InfoBackgroundText
                 themecolor={currentTheme}
                 lightBg={lightBg}
