@@ -6,6 +6,19 @@ export const useExpCardStyles = makeStyles({
         width: "450px",
 
         borderRadius: "2rem",
+
+        "@media (max-width: 1100px)": {
+            padding: "3px 8px",
+            width: "350px",
+            borderRadius: "2rem",
+        },
+
+        "@media (max-width: 920px)": {
+            padding: "3px 8px",
+            width: "280px",
+            borderRadius: "2rem",
+        },
+
         "@media (max-width: 780px)": {
             padding: "3px 8px",
             width: "200px",
