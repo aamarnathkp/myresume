@@ -6,6 +6,7 @@ import {
     FaTwitter,
     FaLinkedin,
     FaGithub,
+    FaNpm,
     FaPenNib,
 } from "react-icons/fa";
 
@@ -82,10 +83,17 @@ const Footer = ({ currentTheme }) => {
                                 <FaGithub />
                             </SocialIconLink>
                             <SocialIconLink
+                                href='https://www.npmjs.com/~aamarnathkp'
+                                currentTheme={currentTheme}
+                                target='_blank'
+                                aria-label='npm'>
+                                <FaNpm />
+                            </SocialIconLink>
+                            <SocialIconLink
                                 href='https://todoappv3.netlify.app/'
                                 currentTheme={currentTheme}
                                 target='_blank'
-                                aria-label='GitHub'>
+                                aria-label='todo-app'>
                                 <FaPenNib />
                             </SocialIconLink>
                         </SocialIcons>
