@@ -9,6 +9,7 @@ import {
     FaTwitter,
     FaLinkedin,
     FaGithub,
+    FaNpm,
 } from "react-icons/fa";
 
 import {
@@ -23,6 +24,7 @@ import {
     ArrowForward,
     ArrowRight,
 } from "./HeroElements";
+import AnimatedWorkExperience from "../Animated/AnimatedWorkExperience";
 
 const HeroSection = ({ currentTheme, myExperience }) => {
     const [hover, setHover] = useState(false);
@@ -37,10 +39,12 @@ const HeroSection = ({ currentTheme, myExperience }) => {
             <HeroContent themecolor={currentTheme}>
                 <HeroIntro>Hi, I'm</HeroIntro>
                 <HeroH1 themecolor={currentTheme}>Amarnath K P</HeroH1>
-                <HeroP
-                    themecolor={
-                        currentTheme
-                    }>{`Software engineer with ${myExperience} of experience`}</HeroP>
+                <HeroP themecolor={currentTheme}>
+                    <AnimatedWorkExperience
+                        value={myExperience}
+                        currentTheme={currentTheme}
+                    />
+                </HeroP>
                 <SocialIcons>
                     <SocialIconLink
                         href='https://www.facebook.com/aamarnath.kp/'
@@ -71,6 +75,12 @@ const HeroSection = ({ currentTheme, myExperience }) => {
                         target='_blank'
                         aria-label='GitHub'>
                         <FaGithub />
+                    </SocialIconLink>
+                    <SocialIconLink
+                        href='https://www.npmjs.com/~aamarnathkp'
+                        target='_blank'
+                        aria-label='npm'>
+                        <FaNpm />
                     </SocialIconLink>
                 </SocialIcons>
                 <HeroBtnWrapper>
